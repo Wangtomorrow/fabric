@@ -1,5 +1,5 @@
-ÅäÖÃOrderer
-OrdererµÄÅäÖÃÊÇÔÚbase/docker-compose-base.yamlÀïÃæ
+ï»¿é…ç½®Orderer
+Ordererçš„é…ç½®æ˜¯åœ¨base/docker-compose-base.yamlé‡Œé¢
 orderer.example.com: 
   container_name: orderer.example.com 
   image: hyperledger/fabric-orderer 
@@ -23,15 +23,15 @@ orderer.example.com:
   - ../crypto-config/ordererOrganizations/example.com/orderers/orderer.example.com/tls/:/var/hyperledger/orderer/tls 
   ports: 
     - 7050:7050
-ORDERER_GENERAL_GENESISFILE=/var/hyperledger/orderer/orderer.genesis.block£¬¶øÕâ¸ö´´ÊÀÇø¿é¾ÍÊÇÎÒÃÇÖ®Ç°´´½¨µÄ´´ÊÀÇø¿é£¬ÕâÀï¾ÍÊÇHostµ½DockerµÄÓ³Éä£º
+ORDERER_GENERAL_GENESISFILE=/var/hyperledger/orderer/orderer.genesis.blockï¼Œè€Œè¿™ä¸ªåˆ›ä¸–åŒºå—å°±æ˜¯æˆ‘ä»¬ä¹‹å‰åˆ›å»ºçš„åˆ›ä¸–åŒºå—ï¼Œè¿™é‡Œå°±æ˜¯Hoståˆ°Dockerçš„æ˜ å°„ï¼š
 
   - ../channel-artifacts/genesis.block:/var/hyperledger/orderer/orderer.genesis.block
 
-ÁíÍâµÄÅäÖÃÖ÷ÒªÊÇTL£¬LogµÈ£¬×îºó±©Â¶³ö·şÎñ¶Ë¿Ú7050¡£
+å¦å¤–çš„é…ç½®ä¸»è¦æ˜¯TLï¼ŒLogç­‰ï¼Œæœ€åæš´éœ²å‡ºæœåŠ¡ç«¯å£7050ã€‚
 
 
-ÅäÖÃPeer
-PeerµÄÅäÖÃÊÇÔÚbase/docker-compose-base.yamlºÍpeer-base.yamlÀïÃæ
+é…ç½®Peer
+Peerçš„é…ç½®æ˜¯åœ¨base/docker-compose-base.yamlå’Œpeer-base.yamlé‡Œé¢
 peer-base: 
   image: hyperledger/fabric-peer 
   environment: 
@@ -71,11 +71,11 @@ peer0.org1.example.com:
     - 7051:7051 
      - 7052:7052 
     - 7053:7053
-Ö÷ÒªÊÇ¸øPeer·ÖÅäºÃ¸÷ÖÖ·şÎñµÄµØÖ·£¬ÒÔ¼°TLSºÍMSPĞÅÏ¢¡£
+ä¸»è¦æ˜¯ç»™Peeråˆ†é…å¥½å„ç§æœåŠ¡çš„åœ°å€ï¼Œä»¥åŠTLSå’ŒMSPä¿¡æ¯ã€‚
 
 
-ÅäÖÃCLI
-CLIÔÚÕû¸öFabricÍøÂçÖĞ°çÑİ¿Í»§¶ËµÄ½ÇÉ«£¬ÎÒÃÇÔÚ¿ª·¢²âÊÔµÄÊ±ºò¿ÉÒÔÓÃCLIÀ´´úÌæSDK£¬Ö´ĞĞ¸÷ÖÖSDKÄÜÖ´ĞĞµÄ²Ù×÷¡£CLI»áºÍPeerÏàÁ¬£¬°ÑÖ¸Áî·¢ËÍ¸ø¶ÔÓ¦µÄPeerÖ´ĞĞ¡£CLIµÄÅäÖÃÔÚdocker-compose-cli.yamlÖĞ¡£
+é…ç½®CLI
+CLIåœ¨æ•´ä¸ªFabricç½‘ç»œä¸­æ‰®æ¼”å®¢æˆ·ç«¯çš„è§’è‰²ï¼Œæˆ‘ä»¬åœ¨å¼€å‘æµ‹è¯•çš„æ—¶å€™å¯ä»¥ç”¨CLIæ¥ä»£æ›¿SDKï¼Œæ‰§è¡Œå„ç§SDKèƒ½æ‰§è¡Œçš„æ“ä½œã€‚CLIä¼šå’ŒPeerç›¸è¿ï¼ŒæŠŠæŒ‡ä»¤å‘é€ç»™å¯¹åº”çš„Peeræ‰§è¡Œã€‚CLIçš„é…ç½®åœ¨docker-compose-cli.yamlä¸­ã€‚
 cli: 
   container_name: cli 
   image: hyperledger/fabric-tools 
@@ -106,9 +106,9 @@ cli:
     - peer1.org1.example.com 
     - peer0.org2.example.com 
     - peer1.org2.example.com 
-CLIÆô¶¯µÄÊ±ºòÄ¬ÈÏÁ¬½ÓµÄÊÇpeer0.org1.example.com£¬²¢ÇÒÆôÓÃÁËTLS¡£Ä¬ÈÏÊÇÒÔAdmin@org1.example.comÕâ¸öÉí·İÁ¬½Óµ½PeerµÄ¡£
-CLIÆô¶¯µÄÊ±ºò£¬»áÈ¥Ö´ĞĞ./scripts/script.sh ½Å±¾£¬Õâ¸ö½Å±¾Ò²¾ÍÊÇfabric/examples/e2e_cli/scripts/script.sh Õâ¸ö½Å±¾£¬Õâ¸ö½Å±¾Íê³ÉÁËFabric»·¾³µÄ³õÊ¼»¯ºÍChainCodeµÄ°²×°¼°ÔËĞĞ
-×¢Òâµ½../chaincode/go/:/opt/gopath/src/github.com/hyperledger/fabric/examples/chaincode/go£¬Ò²¾ÍÊÇËµÎÒÃÇÒª°²×°µÄChainCode¶¼ÊÇÔÚfabric/examples/chaincode/goÄ¿Â¼ÏÂ£¬ÒÔºóÎÒÃÇÒª¿ª·¢×Ô¼ºµÄChainCode£¬Ö»ĞèÒª°ÑÎÒÃÇµÄ´úÂë¸´ÖÆµ½¸ÃÄ¿Â¼¼´¿É¡£
+CLIå¯åŠ¨çš„æ—¶å€™é»˜è®¤è¿æ¥çš„æ˜¯peer0.org1.example.comï¼Œå¹¶ä¸”å¯ç”¨äº†TLSã€‚é»˜è®¤æ˜¯ä»¥Admin@org1.example.comè¿™ä¸ªèº«ä»½è¿æ¥åˆ°Peerçš„ã€‚
+CLIå¯åŠ¨çš„æ—¶å€™ï¼Œä¼šå»æ‰§è¡Œ./scripts/script.sh è„šæœ¬ï¼Œè¿™ä¸ªè„šæœ¬ä¹Ÿå°±æ˜¯fabric/examples/e2e_cli/scripts/script.sh è¿™ä¸ªè„šæœ¬ï¼Œè¿™ä¸ªè„šæœ¬å®Œæˆäº†Fabricç¯å¢ƒçš„åˆå§‹åŒ–å’ŒChainCodeçš„å®‰è£…åŠè¿è¡Œ
+æ³¨æ„åˆ°../chaincode/go/:/opt/gopath/src/github.com/hyperledger/fabric/examples/chaincode/goï¼Œä¹Ÿå°±æ˜¯è¯´æˆ‘ä»¬è¦å®‰è£…çš„ChainCodeéƒ½æ˜¯åœ¨fabric/examples/chaincode/goç›®å½•ä¸‹ï¼Œä»¥åæˆ‘ä»¬è¦å¼€å‘è‡ªå·±çš„ChainCodeï¼Œåªéœ€è¦æŠŠæˆ‘ä»¬çš„ä»£ç å¤åˆ¶åˆ°è¯¥ç›®å½•å³å¯ã€‚
 
 
-×¢ÊÍµôcliÖĞcommandÕâÒ»ĞĞ£¬²»ĞèÒªCLIÆô¶¯µÄÊ±ºò×Ô¶¯Ö´ĞĞ½Å±¾
+æ³¨é‡Šæ‰cliä¸­commandè¿™ä¸€è¡Œï¼Œä¸éœ€è¦CLIå¯åŠ¨çš„æ—¶å€™è‡ªåŠ¨æ‰§è¡Œè„šæœ¬

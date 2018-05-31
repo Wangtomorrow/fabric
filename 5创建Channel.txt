@@ -1,7 +1,7 @@
-½øÈëcliÈİÆ÷ÄÚ²¿
+ï»¿è¿›å…¥cliå®¹å™¨å†…éƒ¨
 docker exec -it cli bash
 
-´´½¨ChannelµÄÃüÁîÊÇpeer channel create
+åˆ›å»ºChannelçš„å‘½ä»¤æ˜¯peer channel create
 ORDERER_CA=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem
 peer channel create -o orderer.example.com:7050 -c mychannel -f ./channel-artifacts/channel.tx --tls true --cafile $ORDERER_CA
-ÏµÍ³»áÔÚcliÄÚ²¿µÄµ±Ç°Ä¿Â¼´´½¨Ò»¸ömychannel.blockÎÄ¼ş£¬Õâ¸öÎÄ¼ş·Ç³£ÖØÒª£¬½ÓÏÂÀ´ÆäËû½ÚµãÒª¼ÓÈëÕâ¸öChannel¾Í±ØĞëÊ¹ÓÃÕâ¸öÎÄ¼ş¡£
+ç³»ç»Ÿä¼šåœ¨cliå†…éƒ¨çš„å½“å‰ç›®å½•åˆ›å»ºä¸€ä¸ªmychannel.blockæ–‡ä»¶ï¼Œè¿™ä¸ªæ–‡ä»¶éå¸¸é‡è¦ï¼Œæ¥ä¸‹æ¥å…¶ä»–èŠ‚ç‚¹è¦åŠ å…¥è¿™ä¸ªChannelå°±å¿…é¡»ä½¿ç”¨è¿™ä¸ªæ–‡ä»¶ã€‚

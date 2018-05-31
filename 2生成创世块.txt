@@ -1,21 +1,21 @@
-±àÒëÉú³Éconfigtxgen
+ï»¿ç¼–è¯‘ç”Ÿæˆconfigtxgen
 cd ~/go/src/github.com/hyperledger/fabric
 make configtxgen
 
-ÅäÖÃconfigtx.yaml
-¹Ù·½Ìá¹©µÄexamples/e2e_cli/configtx.yamlÕâ¸öÎÄ¼şÀïÃæÅäÖÃÁËÓÉ2¸öOrg²ÎÓëµÄOrderer¹²Ê¶ÅäÖÃTwoOrgsOrdererGenesis£¬
-ÒÔ¼°ÓÉ2¸öOrg²ÎÓëµÄChannelÅäÖÃ£ºTwoOrgsChannel¡£
-Orderer¿ÉÒÔÉèÖÃ¹²Ê¶µÄËã·¨ÊÇSolo»¹ÊÇKafka£¬ÒÔ¼°¹²Ê¶Ê±Çø¿é´óĞ¡£¬³¬Ê±Ê±¼äµÈ£¬ÎÒÃÇÊ¹ÓÃÄ¬ÈÏÖµ¼´¿É£¬²»ÓÃ¸ü¸Ä¡£
-¶øPeer½ÚµãµÄÅäÖÃ°üº¬ÁËMSPµÄÅäÖÃ£¬Ãª½ÚµãµÄÅäÖÃ¡£
-Èç¹ûÎÒÃÇÓĞ¸ü¶àµÄOrg£¬»òÕßÓĞ¸ü¶àµÄChannel£¬ÄÇÃ´¾Í¿ÉÒÔ¸ù¾İÄ£°å½øĞĞ¶ÔÓ¦µÄĞŞ¸Ä¡£
+é…ç½®configtx.yaml
+å®˜æ–¹æä¾›çš„examples/e2e_cli/configtx.yamlè¿™ä¸ªæ–‡ä»¶é‡Œé¢é…ç½®äº†ç”±2ä¸ªOrgå‚ä¸çš„Ordererå…±è¯†é…ç½®TwoOrgsOrdererGenesisï¼Œ
+ä»¥åŠç”±2ä¸ªOrgå‚ä¸çš„Channelé…ç½®ï¼šTwoOrgsChannelã€‚
+Ordererå¯ä»¥è®¾ç½®å…±è¯†çš„ç®—æ³•æ˜¯Soloè¿˜æ˜¯Kafkaï¼Œä»¥åŠå…±è¯†æ—¶åŒºå—å¤§å°ï¼Œè¶…æ—¶æ—¶é—´ç­‰ï¼Œæˆ‘ä»¬ä½¿ç”¨é»˜è®¤å€¼å³å¯ï¼Œä¸ç”¨æ›´æ”¹ã€‚
+è€ŒPeerèŠ‚ç‚¹çš„é…ç½®åŒ…å«äº†MSPçš„é…ç½®ï¼Œé”šèŠ‚ç‚¹çš„é…ç½®ã€‚
+å¦‚æœæˆ‘ä»¬æœ‰æ›´å¤šçš„Orgï¼Œæˆ–è€…æœ‰æ›´å¤šçš„Channelï¼Œé‚£ä¹ˆå°±å¯ä»¥æ ¹æ®æ¨¡æ¿è¿›è¡Œå¯¹åº”çš„ä¿®æ”¹ã€‚
 
-Éú³É´´ÊÀÇø¿é
-ÓÃconfigtxgen Éú³É´´ÊÀÇø¿é¡£²¢°ÑÕâ¸öÇø¿é±£´æµ½±¾µØchannel-artifactsÎÄ¼ş¼ĞÖĞ
+ç”Ÿæˆåˆ›ä¸–åŒºå—
+ç”¨configtxgen ç”Ÿæˆåˆ›ä¸–åŒºå—ã€‚å¹¶æŠŠè¿™ä¸ªåŒºå—ä¿å­˜åˆ°æœ¬åœ°channel-artifactsæ–‡ä»¶å¤¹ä¸­
 cd examples/e2e_cli/
 ../../build/bin/configtxgen -profile TwoOrgsOrdererGenesis -outputBlock ./channel-artifacts/genesis.block
 
-Éú³ÉChannelÅäÖÃÇø¿é
+ç”ŸæˆChannelé…ç½®åŒºå—
 ../../build/bin/configtxgen -profile TwoOrgsChannel -outputCreateChannelTx ./channel-artifacts/channel.tx -channelID mychannel
-Ãª½ÚµãµÄ¸üĞÂ
+é”šèŠ‚ç‚¹çš„æ›´æ–°
 ../../build/bin/configtxgen -profile TwoOrgsChannel -outputAnchorPeersUpdate ./channel-artifacts/Org1MSPanchors.tx -channelID mychannel -asOrg Org1MSP
 ../../build/bin/configtxgen -profile TwoOrgsChannel -outputAnchorPeersUpdate ./channel-artifacts/Org2MSPanchors.tx -channelID mychannel -asOrg Org2MSP

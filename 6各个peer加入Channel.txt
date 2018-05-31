@@ -1,7 +1,7 @@
-CLI默认连接的是peer0.org1，要将这个Peer加入mychannel
+锘緾LI榛樿杩炴帴鐨勬槸peer0.org1锛岃灏嗚繖涓狿eer鍔犲叆mychannel
 peer channel join -b mychannel.block
 
-其他几个Peer加入Channel。修改CLI的环境变量，使其指向另外的Peer
+鍏朵粬鍑犱釜Peer鍔犲叆Channel銆備慨鏀笴LI鐨勭幆澧冨彉閲忥紝浣垮叾鎸囧悜鍙﹀鐨凱eer
 CORE_PEER_LOCALMSPID="Org1MSP" 
 CORE_PEER_TLS_ROOTCERT_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt 
 CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp 

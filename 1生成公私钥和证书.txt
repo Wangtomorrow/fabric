@@ -1,24 +1,24 @@
-±àÒëÉú³Écryptogen
+ï»¿ç¼–è¯‘ç”Ÿæˆcryptogen
 cd ~/go/src/github.com/hyperledger/fabric
 make cryptogen
 
 
 
-ÅäÖÃcrypto-config.yaml
-examples/e2e_cli/crypto-config.yamlÒÑ¾­Ìá¹©ÁËÒ»¸öOrderer OrgºÍÁ½¸öPeer OrgµÄÅäÖÃ
+é…ç½®crypto-config.yaml
+examples/e2e_cli/crypto-config.yamlå·²ç»æä¾›äº†ä¸€ä¸ªOrderer Orgå’Œä¸¤ä¸ªPeer Orgçš„é…ç½®
 - Name: Org2 
   Domain: org2.example.com 
   Template: 
     Count: 2 
   Users: 
     Count: 1
-NameºÍDomain¾ÍÊÇ¹ØÓÚÕâ¸ö×éÖ¯µÄÃû×ÖºÍÓòÃû£¬ÕâÖ÷ÒªÊÇÓÃÓÚÉú³ÉÖ¤ÊéµÄÊ±ºò£¬Ö¤ÊéÄÚ»á°üº¬¸ÃĞÅÏ¢¡£
-Template Count=2ÊÇËµÎÒÃÇÒªÉú³É2Ì×¹«Ë½Ô¿ºÍÖ¤Êé£¬Ò»Ì×ÊÇpeer0.org2µÄ£¬»¹ÓĞÒ»Ì×ÊÇpeer1.org2µÄ¡£
-×îºóUsers. Count=1ÊÇËµÃ¿¸öTemplateÏÂÃæ»áÓĞ¼¸¸öÆÕÍ¨User£¨×¢Òâ£¬AdminÊÇAdmin£¬²»°üº¬ÔÚÕâ¸ö¼ÆÊıÖĞ£©£¬ÕâÀïÅäÖÃÁË1£¬
-Ò²¾ÍÊÇËµÎÒÃÇÖ»ĞèÒªÒ»¸öÆÕÍ¨ÓÃ»§User1@org2.example.com ÎÒÃÇ¿ÉÒÔ¸ù¾İÊµ¼ÊĞèÒªµ÷ÕûÕâ¸öÅäÖÃÎÄ¼ş£¬ÔöÉ¾Org UsersµÈ¡£
+Nameå’ŒDomainå°±æ˜¯å…³äºè¿™ä¸ªç»„ç»‡çš„åå­—å’ŒåŸŸåï¼Œè¿™ä¸»è¦æ˜¯ç”¨äºç”Ÿæˆè¯ä¹¦çš„æ—¶å€™ï¼Œè¯ä¹¦å†…ä¼šåŒ…å«è¯¥ä¿¡æ¯ã€‚
+Template Count=2æ˜¯è¯´æˆ‘ä»¬è¦ç”Ÿæˆ2å¥—å…¬ç§é’¥å’Œè¯ä¹¦ï¼Œä¸€å¥—æ˜¯peer0.org2çš„ï¼Œè¿˜æœ‰ä¸€å¥—æ˜¯peer1.org2çš„ã€‚
+æœ€åUsers. Count=1æ˜¯è¯´æ¯ä¸ªTemplateä¸‹é¢ä¼šæœ‰å‡ ä¸ªæ™®é€šUserï¼ˆæ³¨æ„ï¼ŒAdminæ˜¯Adminï¼Œä¸åŒ…å«åœ¨è¿™ä¸ªè®¡æ•°ä¸­ï¼‰ï¼Œè¿™é‡Œé…ç½®äº†1ï¼Œ
+ä¹Ÿå°±æ˜¯è¯´æˆ‘ä»¬åªéœ€è¦ä¸€ä¸ªæ™®é€šç”¨æˆ·User1@org2.example.com æˆ‘ä»¬å¯ä»¥æ ¹æ®å®é™…éœ€è¦è°ƒæ•´è¿™ä¸ªé…ç½®æ–‡ä»¶ï¼Œå¢åˆ Org Usersç­‰ã€‚
 
-Éú³É¹«Ë½Ô¿ºÍÖ¤Êé
-ÓÃcryptogenÈ¥¶ÁÈ¡ÅäÖÃºÃµÄcrypto-config.yamlÎÄ¼ş£¬²¢Éú³É¶ÔÓ¦µÄ¹«Ë½Ô¿ºÍÖ¤Êé
+ç”Ÿæˆå…¬ç§é’¥å’Œè¯ä¹¦
+ç”¨cryptogenå»è¯»å–é…ç½®å¥½çš„crypto-config.yamlæ–‡ä»¶ï¼Œå¹¶ç”Ÿæˆå¯¹åº”çš„å…¬ç§é’¥å’Œè¯ä¹¦
 cd examples/e2e_cli/
 ../../build/bin/cryptogen generate --config=./crypto-config.yaml
-Éú³ÉµÄÎÄ¼ş¶¼±£´æµ½crypto-configÎÄ¼ş¼Ğ
+ç”Ÿæˆçš„æ–‡ä»¶éƒ½ä¿å­˜åˆ°crypto-configæ–‡ä»¶å¤¹

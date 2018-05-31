@@ -1,10 +1,10 @@
-cd ~/go/src/github.com/hyperledger/fabric/examples/e2e_cli
+ï»¿cd ~/go/src/github.com/hyperledger/fabric/examples/e2e_cli
 docker-compose -f docker-compose-cli.yaml up -d
-×îºóÕâ¸ö-d²ÎÊıÈç¹û²»¼Ó£¬ÄÇÃ´µ±Ç°ÖÕ¶Ë¾Í»áÒ»Ö±¸½¼ÓÔÚdocker-composeÉÏ£¬¶øÈç¹û¼ÓÉÏµÄ»°£¬ÄÇÃ´dockerÈİÆ÷¾ÍÔÚºóÌ¨ÔËĞĞ¡£
-ÔËĞĞdocker psÃüÁî¿ÉÒÔ¿´Æô¶¯µÄ½á¹û
+æœ€åè¿™ä¸ª-då‚æ•°å¦‚æœä¸åŠ ï¼Œé‚£ä¹ˆå½“å‰ç»ˆç«¯å°±ä¼šä¸€ç›´é™„åŠ åœ¨docker-composeä¸Šï¼Œè€Œå¦‚æœåŠ ä¸Šçš„è¯ï¼Œé‚£ä¹ˆdockerå®¹å™¨å°±åœ¨åå°è¿è¡Œã€‚
+è¿è¡Œdocker pså‘½ä»¤å¯ä»¥çœ‹å¯åŠ¨çš„ç»“æœ
 
 
-½øÈëcliÈİÆ÷ÄÚ²¿£¬ÔÚÀïÃæ´´½¨Channel¡£ÏÈÓÃÒÔÏÂÃüÁî½øÈëCLIÄÚ²¿Bash£º
+è¿›å…¥cliå®¹å™¨å†…éƒ¨ï¼Œåœ¨é‡Œé¢åˆ›å»ºChannelã€‚å…ˆç”¨ä»¥ä¸‹å‘½ä»¤è¿›å…¥CLIå†…éƒ¨Bashï¼š
 docker exec -it cli bash	
 
 
