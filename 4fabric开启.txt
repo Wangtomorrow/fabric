@@ -1,0 +1,11 @@
+cd ~/go/src/github.com/hyperledger/fabric/examples/e2e_cli
+docker-compose -f docker-compose-cli.yaml up -d
+最后这个-d参数如果不加，那么当前终端就会一直附加在docker-compose上，而如果加上的话，那么docker容器就在后台运行。
+运行docker ps命令可以看启动的结果
+
+
+进入cli容器内部，在里面创建Channel。先用以下命令进入CLI内部Bash：
+docker exec -it cli bash	
+
+
+

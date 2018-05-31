@@ -1,0 +1,21 @@
+编译生成configtxgen
+cd ~/go/src/github.com/hyperledger/fabric
+make configtxgen
+
+配置configtx.yaml
+官方提供的examples/e2e_cli/configtx.yaml这个文件里面配置了由2个Org参与的Orderer共识配置TwoOrgsOrdererGenesis，
+以及由2个Org参与的Channel配置：TwoOrgsChannel。
+Orderer可以设置共识的算法是Solo还是Kafka，以及共识时区块大小，超时时间等，我们使用默认值即可，不用更改。
+而Peer节点的配置包含了MSP的配置，锚节点的配置。
+如果我们有更多的Org，或者有更多的Channel，那么就可以根据模板进行对应的修改。
+
+生成创世区块
+用configtxgen 生成创世区块。并把这个区块保存到本地channel-artifacts文件夹中
+cd examples/e2e_cli/
+../../build/bin/configtxgen -profile TwoOrgsOrdererGenesis -outputBlock ./channel-artifacts/genesis.block
+
+生成Channel配置区块
+../../build/bin/configtxgen -profile TwoOrgsChannel -outputCreateChannelTx ./channel-artifacts/channel.tx -channelID mychannel
+锚节点的更新
+../../build/bin/configtxgen -profile TwoOrgsChannel -outputAnchorPeersUpdate ./channel-artifacts/Org1MSPanchors.tx -channelID mychannel -asOrg Org1MSP
+../../build/bin/configtxgen -profile TwoOrgsChannel -outputAnchorPeersUpdate ./channel-artifacts/Org2MSPanchors.tx -channelID mychannel -asOrg Org2MSP

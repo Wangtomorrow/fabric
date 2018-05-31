@@ -1,0 +1,24 @@
+编译生成cryptogen
+cd ~/go/src/github.com/hyperledger/fabric
+make cryptogen
+
+
+
+配置crypto-config.yaml
+examples/e2e_cli/crypto-config.yaml已经提供了一个Orderer Org和两个Peer Org的配置
+- Name: Org2 
+  Domain: org2.example.com 
+  Template: 
+    Count: 2 
+  Users: 
+    Count: 1
+Name和Domain就是关于这个组织的名字和域名，这主要是用于生成证书的时候，证书内会包含该信息。
+Template Count=2是说我们要生成2套公私钥和证书，一套是peer0.org2的，还有一套是peer1.org2的。
+最后Users. Count=1是说每个Template下面会有几个普通User（注意，Admin是Admin，不包含在这个计数中），这里配置了1，
+也就是说我们只需要一个普通用户User1@org2.example.com 我们可以根据实际需要调整这个配置文件，增删Org Users等。
+
+生成公私钥和证书
+用cryptogen去读取配置好的crypto-config.yaml文件，并生成对应的公私钥和证书
+cd examples/e2e_cli/
+../../build/bin/cryptogen generate --config=./crypto-config.yaml
+生成的文件都保存到crypto-config文件夹
